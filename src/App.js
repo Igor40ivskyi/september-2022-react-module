@@ -1,7 +1,11 @@
+import {Simpsons} from "./components/Simpsons/Simpsons";
+import {Frames} from "./components/Frames/Frames";
+
 const App = () => {
     return (
         <div>
-            Appp
+            <Simpsons/>
+            <Frames/>
         </div>
     );
 };
