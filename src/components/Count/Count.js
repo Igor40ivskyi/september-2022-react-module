@@ -17,3 +17,20 @@ const Count = () => {
 };
 
 export {Count};
+
+// import {useState} from "react";
+//
+// const Count = () => {
+//
+//     const [num,setNum] = useState(0);
+//
+//
+//     return (
+//         <div>
+//             <div>num {num}</div>
+//             <button onClick={()=>setNum(prevState => prevState+1)}>INC</button>
+//         </div>
+//     );
+// };
+//
+// export {Count};
