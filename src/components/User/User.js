@@ -1,4 +1,4 @@
-const User = ({user}) => {
+const User = ({user,setUserDetails}) => {
 
     const {id, name, username, email} = user;
 
@@ -8,6 +8,7 @@ const User = ({user}) => {
             <div>name {name}</div>
             <div>username {username}</div>
             <div>email {email}</div>
+
         </div>
     );
 };

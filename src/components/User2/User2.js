@@ -9,6 +9,7 @@ const User2 = ({user}) => {
             <div>name {name}</div>
             <div>username {username}</div>
             <div>email {email}</div>
+            {/*<button onClick={()=>}>GET Details</button>*/}
         </div>
     );
 };
