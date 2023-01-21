@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import {User} from "../User/User";
+import {User} from "../index";
 import {userService} from "../../services";
 import {UserFullData} from "../../components";
 
@@ -22,6 +22,8 @@ const Users = () => {
 
             <h1>USER DETAILS</h1>
             {userDetails && <UserFullData user={userDetails}/>}
+
+            <hr/>
         </div>
     );
 };

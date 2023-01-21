@@ -3,3 +3,6 @@ export * from './Users/Users';
 export * from './UserFullData/UserFullData';
 export * from './SingleUser/SingleUser';
 
+export * from './Launch/Launch';
+export * from './Launches/Launches';
+
