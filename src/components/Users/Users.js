@@ -20,6 +20,8 @@ const Users = () => {
 
             <h1>USER DETAILS</h1>
             {userDetails && <UserFullData user={userDetails}/>}
+
+            <hr/>
         </div>
     );
 };
