@@ -5,8 +5,6 @@ import {Post} from "../../components";
 
 const Posts = ({id}) => {
 
-    console.log(id);
-
     const [posts,setPosts] = useState([]);
 
     useEffect(() => {
