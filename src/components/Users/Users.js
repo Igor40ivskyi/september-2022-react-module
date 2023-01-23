@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import {User,Posts} from "../../components";
 import {usersService} from "../../services";
+import './Users.css'
 
 const Users = () => {
 
@@ -14,7 +15,7 @@ const Users = () => {
 
     return (
 
-        <div>
+        <div className={'usersWrap'}>
             {users.map((value, index) => <User key={index} user={value} setUserId={setUserId}/>)}
             <Posts id={userID}/>
         </div>

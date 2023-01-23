@@ -22,7 +22,6 @@ const User = ({user,setUserId}) => {
             {idd && <button onClick={() => setIdd(null)}>HIDE</button>}
             </div>
             <Posts id={idd}/>
-            <hr/>
 
         </div>
     );
