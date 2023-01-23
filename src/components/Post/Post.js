@@ -1,3 +1,5 @@
+import './Post.css';
+
 const Post = ({post,userID}) => {
 
     const {userId,title, body} = post;
@@ -5,14 +7,10 @@ const Post = ({post,userID}) => {
     if (userId === userID) {
 
         return (
-            <div>
-
+            <div className={'userPosts'}>
                 <div>userID {userId}</div>
                 <div>TITLE {title}</div>
                 <div>CONTENT {body}</div>
-
-                <br/>
-
             </div>
         );
 }
