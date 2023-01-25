@@ -8,6 +8,8 @@ const App = () => {
     const [cars, setCars] = useState([]);
     const [updateCar,setUpdateCar] = useState(null);
 
+    axios.delete('http://owu.linkpc.net/carsAPI/v1/cars/644');
+
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data));
     },[]);
