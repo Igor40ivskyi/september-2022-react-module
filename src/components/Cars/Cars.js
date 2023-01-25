@@ -2,13 +2,9 @@ import {axiosService, carService} from "../../services";
 import {useEffect, useState} from "react";
 import {Car} from "../Car/Car";
 
-const Cars = () => {
+const Cars = ({cars}) => {
 
-    const [cars, setCars] = useState([]);
 
-    useEffect(() => {
-        carService.getAll().then(({data}) => setCars(data));
-    },[]);
 
     return (
         <div>

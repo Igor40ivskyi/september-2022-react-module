@@ -1,24 +1,56 @@
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
 
-const CarForm = () => {
+import {carValidator} from "../../validators/carValidator";
+import {carService} from "../../services";
 
-    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({mode:'all'});
+const CarForm = ({setCars}) => {
 
-
-    const submit = (data) => {
-        console.log(data);
-
-
+    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({mode:'all',
+        resolver:joiResolver(carValidator)});
 
 
+    const submit = async (car) => {
+
+        const {data} = await carService.create(car);
+        setCars(prev=>[...prev,data])
+        reset()
     };
 
     return (
+
+        // <form onSubmit={handleSubmit(submit)}>
+        //     <input type="text" placeholder={'brand'} {...register('brand',{pattern:{value:/^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/,message:'Тільки букви'},
+        //         required:{value:true,message:'required'}
+        //
+        //     })} />
+        //     {errors.brand&& <span>{errors.brand.message}</span>}
+        //     <input type="text" placeholder={'price'} {...register('price',{
+        //         valueAsNumber:true,
+        //         min:{value:0,message:'Мінімум 0'},
+        //         max:{value:1000000,message:'Максимум мільйон'}
+        //     })}/>
+        //     {errors.price&&<span>{errors.price.message}</span>}
+        //     <input type="text" placeholder={'year'} {...register('year',{valueAsNumber:true,
+        //     min:{value:1990,message:'Від 1990р.'},
+        //     max:{value:new Date().getFullYear(),message:`макс ${new Date().getFullYear()}`}
+        //     })}/>
+        //     {errors.year&& <span>{errors.year.message}</span>}
+        //     <button>SAVE</button>
+        // </form>
         <form onSubmit={handleSubmit(submit)}>
-            <input type="text" placeholder={'brand'} {...register('brand')}/>
+
+            <input type="text" placeholder={'brand'} {...register('brand')} />
+            {errors.brand&& <span>{errors.brand.message}</span>}
+
             <input type="text" placeholder={'price'} {...register('price')}/>
+            {errors.price&&<span>{errors.price.message}</span>}
+
             <input type="text" placeholder={'year'} {...register('year')}/>
-            <button>SAVE</button>
+            {errors.year&& <span>{errors.year.message}</span>}
+
+            <button disabled={!isValid}>SAVE</button>
+
         </form>
     );
 };
