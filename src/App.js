@@ -1,7 +1,13 @@
+import {Users, UsersForm} from "./components";
+
 const App = () => {
+
+
     return (
         <div>
-            Appp
+            <UsersForm/>
+            <hr/>
+            <Users/>
         </div>
     );
 };

@@ -1,0 +1,13 @@
+.inputsDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.regularInput {
+    margin-left: 20px;
+    margin-bottom: 7px;
+    height: 25px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: Rockwell;
+}
