@@ -9,9 +9,6 @@ const UsersForm = () => {
             <input className={'regularInput'} type="text" placeholder={'name'}/>
             <input className={'regularInput'} type="text" placeholder={'name'}/>
             <input className={'regularInput'} type="text" placeholder={'name'}/>
-            <input className={'regularInput'} type="text" placeholder={'name'}/>
-            <input className={'regularInput'} type="text" placeholder={'name'}/>
-
             </div>
 
         </form>
