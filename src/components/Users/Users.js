@@ -3,15 +3,7 @@ import {usersService} from "../../services";
 import axios from "axios";
 import {User} from "../User/User";
 
-const Users = () => {
-
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        usersService.getAll().then(({data}) => setUsers(data));
-
-    },[]);
-
+const Users = ({users}) => {
 
     return (
         <div>

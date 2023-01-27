@@ -2,12 +2,13 @@ import './UsersForm.css';
 import {useForm} from "react-hook-form";
 import {usersService} from "../../services";
 
-const UsersForm = () => {
+const UsersForm = ({setUsers}) => {
 
     const {register,handleSubmit,reset,formState:{errors,isValid},} = useForm({mode: 'all'});
 
-    const submit = (data) => {
-        usersService.create(data).then(({data})=> console.log(data))
+    const submit = async (data) => {
+        await usersService.create(data).then(({data}) => setUsers(prev => [...prev, data]));
+        reset()
     };
 
     return (
