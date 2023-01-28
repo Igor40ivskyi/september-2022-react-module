@@ -1,4 +1,4 @@
-const baseURL = 'http://https://jsonplaceholder.typicode.com/';
+const baseURL = 'https://jsonplaceholder.typicode.com/';
 
 const points = {
     posts: '/posts',
