@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {postsService} from "../../services";
 
-    const PostDetails = ({postId}) => {
+    const PostDetails = ({postId,state}) => {
 
         const [post,setPost] = useState(null);
 
@@ -10,7 +10,12 @@ import {postsService} from "../../services";
 
 
     useEffect(() => {
+        if (state) {
+            setPost({...state})
+        }else {
         postsService.getById(postId).then(({data}) => setPost(data));
+        }
+
     }, [postId]);
 
 
