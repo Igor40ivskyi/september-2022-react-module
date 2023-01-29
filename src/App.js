@@ -2,6 +2,8 @@ import {Route, Routes} from "react-router-dom";
 import {MainLayout} from "./layouts/Mainlayout/MainLayout";
 import {AlbumsPage, CommentsPage, HomePage, TodosPage} from "./pages";
 import {Header} from "./components/Header/Header";
+import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
+import {PostRelated} from "./components";
 
 const App = () => {
     return (
@@ -12,6 +14,10 @@ const App = () => {
                     <Route path={'/todos'} element={<TodosPage/>}/>
                     <Route path={'/albums'} element={<AlbumsPage/>}/>
                     <Route path={'/comments'} element={<CommentsPage/>}/>
+
+                    <Route path={'comments/:postId'} element={<PostRelated/>}/>
+
+                    <Route path={'*'} element={<NotFoundPage/>}/>
 
                 </Route>
             </Routes>

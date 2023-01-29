@@ -1,5 +1,5 @@
 import css from '../Todo/Todo.module.css'
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const Comment = ({comment}) => {
 
@@ -12,6 +12,7 @@ const Comment = ({comment}) => {
             <div>postId {postId}</div>
             <div>email {email}</div>
             <div>body {body}</div>
+            <NavLink to={id.toString()}>GET POST</NavLink>
         </div>
     );
 };
