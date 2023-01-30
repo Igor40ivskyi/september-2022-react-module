@@ -1,0 +1,21 @@
+.Header {
+    margin-top: 10px;
+    min-height: 90px;
+    box-shadow: 2px 2px 2px 2px gainsboro;
+    background-color: dimgrey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Header a {
+    text-decoration: none;
+    font-size: 27px;
+    font-family: Bahnschrift;
+    color: white;
+    width: 200px;
+}
+
+.Header a[class='active'] {
+    color: black;
+}
