@@ -1,7 +1,11 @@
+import {Comments, Posts} from "./components";
+
 const App = () => {
     return (
         <div>
-            Appp
+            <Posts/>
+            <hr/>
+            <Comments/>
         </div>
     );
 };
