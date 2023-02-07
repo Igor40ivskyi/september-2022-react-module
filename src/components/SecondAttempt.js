@@ -7,7 +7,6 @@ const SecondAttempt = () => {
 
         console.log(action);
         console.log(state);
-        cou
 
         switch (action.type) {
             case 'INC1' :
@@ -19,14 +18,11 @@ const SecondAttempt = () => {
             case 'DEC2':
                 return {...state, count2: state.count2 - 1}
             case 'RESET':
-                return {count1: 0, count2: 0}
-
-
+                return {count1: action.payload, count2: action.payload}
 
             default:
                 return {...state};
         }
-
     };
 
     const initValue = () => (
@@ -46,7 +42,7 @@ const SecondAttempt = () => {
             <button onClick={()=>dispatch({type: 'INC2'})}>INC</button>
             <button onClick={()=>dispatch({type: 'DEC2'})}>DEC</button>
 
-            <button onClick={()=>dispatch({type:'RESET'})}>RESET</button>
+            <button onClick={()=>dispatch({type:'RESET', payload: 33})}>RESET</button>
 
         </div>
     );
