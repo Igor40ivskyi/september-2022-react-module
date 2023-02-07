@@ -22,6 +22,7 @@ const reducer = (state,action) => {
             console.log(idDog);
             return {...state, dogs: [...state.dogs, {idDog, name: action.payload}]};
 
+
         case 'DELETE_DOG':
             const indexDog = state.dogs.findIndex(dog => dog === action.payload);
             state.dogs.splice(indexDog, 1);
