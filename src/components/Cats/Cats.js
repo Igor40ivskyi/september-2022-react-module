@@ -1,7 +1,9 @@
-const Cats = () => {
+import {Cat} from "../Cat/Cat";
+
+const Cats = ({cats,dispatch}) => {
     return (
         <div>
-            Cats
+            {cats.map(cat=><Cat key={cat.id} cat={cat} dispatch={dispatch}/>)}
         </div>
     );
 };
