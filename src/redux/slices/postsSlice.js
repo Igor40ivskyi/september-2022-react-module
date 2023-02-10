@@ -19,6 +19,19 @@ const getAll = createAsyncThunk(
         }
     });
 
+const getById = createAsyncThunk(
+    'postsSlice/getById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await postsService.getById(id)
+            return data;
+        } catch (e) {
+            return rejectWithValue(e.response.data);
+        }
+    }
+);
+
+
 const postsSlice = createSlice({
     name: 'postsSlice',
     initialState,
@@ -34,6 +47,9 @@ const postsSlice = createSlice({
             .addCase(getAll.rejected, (state, action) => {
                 state.loading = false;
                 state.errors = action.payload;
+            })
+            .addCase(getById.fulfilled, (state, action) => {
+                state.selectedPost = action.payload;
             });
     },
 });
@@ -41,7 +57,7 @@ const postsSlice = createSlice({
 const {reducer: postReducer} = postsSlice;
 
 const postActions = {
-    getAll
+    getAll,getById
 };
 
 export {postReducer,postActions};

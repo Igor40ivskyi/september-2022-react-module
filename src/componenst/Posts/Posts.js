@@ -11,13 +11,23 @@ const Posts = () => {
         dispatch(postActions.getAll());
     },[]);
 
-    const {posts,loading} = useSelector(state => state.posts);
+    const {posts,loading,selectedPost} = useSelector(state => state.posts);
 
     return (
         <div>
             <hr/>
-            {loading && <h1>LOADING...</h1>}
-            {posts.map(post=><Post key={post.id} post={post}/>)}
+
+            <div style={{display: "flex"}}>
+
+                <div style={{maxWidth: 900, paddingLeft: 40}}>
+                    {posts.map(post => <Post key={post.id} post={post}/>)}
+                </div>
+
+                <div style={{fontSize:30,paddingTop:100,paddingRight:200,marginLeft:100}}>
+                    {selectedPost && selectedPost.title}
+                </div>
+
+            </div>
         </div>
     );
 };
