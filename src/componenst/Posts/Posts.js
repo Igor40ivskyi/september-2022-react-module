@@ -1,6 +1,8 @@
-import {Post} from "../Post/Post";
 import {useEffect} from "react";
+
 import {useDispatch, useSelector} from "react-redux";
+
+import {Post} from "../Post/Post";
 import {postActions} from "../../redux/slices/postsSlice";
 
 const Posts = () => {
