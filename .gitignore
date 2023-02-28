@@ -1,5 +1,0 @@
-.idea
-node-modules
-package-lock.json
-# Project exclude paths
-/node_modules/
