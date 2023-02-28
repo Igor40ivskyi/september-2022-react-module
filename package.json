@@ -1,0 +1,23 @@
+{
+  "name": "september-2022-react-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Igor40ivskyi/september-2022-react-module.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Igor40ivskyi/september-2022-react-module/issues"
+  },
+  "homepage": "https://github.com/Igor40ivskyi/september-2022-react-module#readme"
+}
